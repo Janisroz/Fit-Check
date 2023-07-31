@@ -55,10 +55,6 @@ def bmi(name):
     weight = int(weight)
 
     bmi = calculate_bmi(height, weight)
-
-def calculate_bmi(h, w):
-    h_in_m = h / 100
-    bmi = w / (h_in_m**2)
     print(bmi)
 
     
@@ -89,6 +85,18 @@ def validate_h_or_w(data, type):
         return False
 
     return True
+
+
+def calculate_bmi(h, w):
+    """
+    Calculates BMI & rounds to 2 decimal places
+    """
+    h_in_m = h / 100
+    bmi = w / (h_in_m**2)
+    bmi = round(bmi, 2)
+    return bmi
+
+
 
 
 def main():
