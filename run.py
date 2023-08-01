@@ -140,30 +140,75 @@ def bmi_result(bmi, name):
 
 def recc_calories(name, bmi):
     print("Next we will calculate your recommended calories")
-    print("We will do this by getting your age and activity level")
-    print("and creating a recommendation based on this")
+    print("We will do this by getting your gender, age and activity level")
+    print("and creating a recommendation based on this\n")
+
+    # get gender & validate
+    print("Firstly please tell us your gender\nm - male\nf - female")
+    while True:
+        gender = input("Input your gender:\n")
+        if validate_gender(gender):
+            break
 
     # get age & validate
     while True:
-        age = input("Firstly please tell us your age from 18-100\n")
-        if validate_age(age):
-            break
-    age = int(age)
-    
-    # get activity level and validate
-    while True:
-
-        activity_level = input("Next please tell us your activity level a, b or c\n")
+        age = input("Firstly please tell us your age from 18-100:\n")
         if validate_age(age):
             break
     age = int(age)
     print(age)
+    # get activity level and validate
+    print("\nActivity level is your total amount of daily physical activity")
+    print("It is split into three levels:")
+    print("Sedentary is inactive where your only activity is daily life\n")
+    print("Moderately active is at least 60 mins 3 days a week")
+    print("of moderately intense excercise for  per week\n")
+    print("Active is at least 60 mins 5 days a week")
+    print("of moderately intense to intense exercise per week\n")
+    while True:
+        
+        print("Choose your activity level:")
+        print("a - Sedentary\nb - Moderately Active\nc - Active")
+
+        activity_level = input("Next please tell us your activity level a, b or c\n")
+
+        if validate_activity_level(activity_level):
+            break
+    print(activity_level)
+
+
+def validate_gender(gender):
+    try:
+        if gender == "m" or gender == "f":
+            pass
+        else:
+            raise ValueError(
+                "Please choose m for male or f for female"
+            )
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again\n")
+        return False
+
+
+def validate_activity_level(level):
+    try: 
+        if level == "a" or level == "b" or level == "c":
+            pass
+        else:
+            raise ValueError(
+                "Please choose a, b or c"
+            )
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again\n")
+        return False
 
 
 def validate_age(age):
     try:
         age = int(age)
-        if age >= 18 or age <= 100:
+        if age >= 18 and age <= 100:
             pass
         else:
             raise ValueError(
