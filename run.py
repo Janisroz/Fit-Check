@@ -1,32 +1,22 @@
 
-def name():
-    """
-    Gets user name and validates input
-    """
-    while True:
-        name = input("Please Enter your first name:\n")
-
-        if validate_name(name):
-            break
-
-    return name
 
 
-def validate_name(name):
+def get_name():
     """
     Validates user input as only letters and less than 20 characters
     """
 
     try:
+        name = input("Please Enter your first name:\n")
         if str.isalpha(name) and len(name) < 20:
-            pass
+            return name
         else:
             raise ValueError(
                 f"Name must only be letters and less than 20 characters"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again\n")
-        return False
+        print(f"Invalid data: {e}, please try again\n") 
+        get_name()
 
     return True
 
@@ -35,26 +25,20 @@ def bmi(name):
     """
     Calculates user BMI by getting height and weight and validates both
     """
-    print(f"Welcome {name}\n")
+    print(f"\nWelcome {name}\n")
+    print("----------------------------------------------------")
     print("Firstly we will calculate your Body Mass Index (BMI)")
     print("This figure is used to estimate your total amount of body fat.")
     print("It is only an approximate measure of the")
-    print("best weight for your health.\n")
+    print("best weight for your health.")
+    print("----------------------------------------------------\n")
 
     # get height & validate
-    while True:
-        height = input("Firstly please enter your height in centimeters e.g. 180 (Do not include cm):\n")
-        if validate_h_or_w(height, "Height"):
-            break
-    height = int(height)
-
+    height = get_height()
+    
     # get weight & validate
-    while True:
-        weight = input("Now please enter your weight in kg e.g. 80 (Do not include kg):\n")
-        if validate_h_or_w(weight, "Weight"):
-            break
-    weight = int(weight)
-
+    weight = get_weight()
+    
     # Calculate BMI
     bmi = calculate_bmi(height, weight)
 
@@ -64,33 +48,28 @@ def bmi(name):
     return result
 
 
-def validate_h_or_w(data, type):
-    """
-    Validates height and weight to ensure in correct form
-    """
-    unit = ""
-    if type == "Height":
-        unit = "cm"
-    elif type == "Weight":
-        unit = "kg"
-    else:
-        print("we have encountered an error... Restarting")
-        main()
-
+def get_height():
     try:
-        data = int(data)
-        if data < 300:
-            pass
+        height = int(input("Enter your height e.g.180 (Do not include cm):\n"))
+        if height < 300:
+            return height
         else:
-            raise ValueError(
-                f"{type} must only be numbers and less than 300{unit}"
-            )
+            raise Exception
+    except Exception:
+        print("Height must be numbers only and less than 300")
+        get_height()
 
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again\n")
-        return False
 
-    return True
+def get_weight():
+    try:
+        weight = int(input("Enter your weight e.g.80 (Do not include kg):\n"))
+        if weight < 300:
+            return weight
+        else:
+            raise Exception
+    except Exception:
+        print("Weight must be numbers only and less than 300")
+        get_weight()
 
 
 def calculate_bmi(h, w):
@@ -130,19 +109,23 @@ def bmi_result(bmi, name):
     else:
         print("Error with result please try again")
         main()
-
-    print(f"\n{name}, your BMI is {bmi}\n")
+    print("\n----------------------------------------------------")
+    print(f"{name}, your BMI is {bmi}")
+    print("----------------------------------------------------\n")
+    print("----------------------------------------------------")
     print(f"This result classifies you as {result}")
-    print(f"With this result we recommend that your focus is on {recommendation}\n")
+    print(f"With this result we recommend that your focus is on {recommendation}")
+    print("----------------------------------------------------\n")
 
     return result
 
 
 def recc_calories(name, bmi):
+    print("----------------------------------------------------")
     print("Next we will calculate your recommended calories")
     print("We will do this by getting your gender, age and activity level")
-    print("and creating a recommendation based on this\n")
-
+    print("and creating a recommendation based on this")
+    print("----------------------------------------------------\n")
     # get gender & validate
     print("Firstly please tell us your gender\nm - male\nf - female")
     while True:
@@ -223,7 +206,7 @@ def validate_age(age):
 
 
 def main():
-    user = name()
+    user = get_name()
     body_mass_index_result = bmi(user)
     recc_calories(name, body_mass_index_result)
 
