@@ -137,7 +137,7 @@ def bmi_result(bmi, name):
     return recommendation
 
 
-def recc_calories(name,recommendation):
+def recc_calories(name, recommendation):
     """
     Collect info to give user a recommendation on daily calorie consumption
     """
@@ -318,6 +318,108 @@ def workout_plan(recommendation, name):
     print("Best suit your needs")
     print("----------------------------------------------------\n")
 
+    if recommendation == "weight gain":
+        weight_gain_session_print()
+    elif recommendation == "maintenance":
+        maintenance_session_print()
+    elif recommendation == "weight loss":
+        weight_loss_session_print()
+
+
+def weight_gain_session_print():
+    """
+    Prints the gain weight sessions
+    """
+    # Open workouts.json file
+    with open("workouts.json", "r") as f:
+        data = json.load(f)
+
+    # gets the gain weight sessions dictionary 
+    weight_plan = data["Reccommendation"][0]
+
+    # gets the gain weight sessions
+    weight_sessions = weight_plan["weight gain"][0]
+
+    print("----------------------------------------------------")
+    print("Upper Body:")
+    for i in weight_sessions["Upper body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    print("Lower Body:")
+    for i in weight_sessions["Lower body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    print("Full Body:")
+    for i in weight_sessions["Full body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+
+
+def maintenance_session_print():
+    """
+    Prints the maintenance weight sessions
+    """
+    # Open workouts.json file
+    with open("workouts.json", "r") as f:
+        data = json.load(f)
+
+    # gets the maintenance weight sessions dictionary 
+    weight_plan = data["Reccommendation"][1]
+
+    # gets the maintenance weight sessions
+    weight_sessions = weight_plan["maintenance"][0]
+
+    print("----------------------------------------------------")
+    print("Upper Body:")
+    for i in weight_sessions["Upper body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    print("Lower Body:")
+    for i in weight_sessions["Lower body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    print("Full Body:")
+    for i in weight_sessions["Full body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    
+
+def weight_loss_session_print():
+    """
+    Prints the weight loss sessions
+    """
+    # Open workouts.json file
+    with open("workouts.json", "r") as f:
+        data = json.load(f)
+
+    # gets the weight loss sessions dictionary 
+    weight_plan = data["Reccommendation"][2]
+
+    # gets the weight loss sessions
+    weight_sessions = weight_plan["maintenance"][0]
+
+    print("----------------------------------------------------")
+    print("Upper Body:")
+    for i in weight_sessions["Upper body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    print("Lower Body:")
+    for i in weight_sessions["Lower body"]:
+        print(i)
+
+    print("----------------------------------------------------")
+    print("Full Body:")
+    for i in weight_sessions["Full body"]:
+        print(i)
+
+    print("----------------------------------------------------")
 
 
 def main():
@@ -327,5 +429,8 @@ def main():
     recc_calories(name, recommendation)
     workout_plan(recommendation, name)
 
+
 if __name__ == '__main__':
     main()
+
+
