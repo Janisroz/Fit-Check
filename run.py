@@ -149,8 +149,9 @@ def recc_calories(name, bmi):
     print("Active is at least 60 mins 5 days a week")
     print("of moderately intense to intense exercise per week\n")
     print("----------------------------------------------------")
-    get_activity_level()
-
+    activity_level = get_activity_level()
+    recc_calories = get_recc_calories(gender, age, activity_level)
+    print(recc_calories)
 
 def get_gender():
     try:
@@ -172,8 +173,8 @@ def get_gender():
 
 def get_age():
     try:
-        age = int(input("Please tell us your age from 18-100:\n"))
-        print("----------------------------------------------------")
+        age = int(input("\nPlease tell us your age from 18-100:\n"))
+        print("----------------------------------------------------\n")
         if age >= 18 and age <= 100:
             return age
         if age < 18 or age > 100:
@@ -199,6 +200,75 @@ def get_activity_level():
     except ValueError as e:
         print(f"Invalid data: {e}, please try again\n")
         get_activity_level()
+
+def get_recc_calories(gender, age, activity_level):
+    if gender == "f":
+        if age <= 30:
+            if activity_level == "a":
+                recc_calories = 1800
+                return recc_calories
+            elif activity_level == "b":
+                recc_calories = 2000
+                return recc_calories
+            elif activity_level == "c":
+                recc_calories = 2400
+                return recc_calories
+
+        elif age > 30 and age <= 50:
+            if activity_level == "a":
+                recc_calories = 1800
+                return recc_calories
+            elif activity_level == "b":
+                recc_calories = 2000
+                return recc_calories
+            elif activity_level == "c":
+                recc_calories = 2200
+                return recc_calories
+
+        elif age > 50:
+            if activity_level == "a":
+                recc_calories = 1600
+                return recc_calories
+            elif activity_level == "b":
+                recc_calories = 1800
+                return recc_calories
+            elif activity_level == "c":
+                recc_calories = 2200
+                return recc_calories
+
+    if gender == "m":
+        if age <= 30:
+            if activity_level == "a":
+                recc_calories = 2400
+                return recc_calories
+            elif activity_level == "b":
+                recc_calories = 2600
+                return recc_calories
+            elif activity_level == "c":
+                recc_calories = 3000
+                return recc_calories
+
+        elif age > 30 and age <= 50:
+            if activity_level == "a":
+                recc_calories = 2200
+                return recc_calories
+            elif activity_level == "b":
+                recc_calories = 2400
+                return recc_calories
+            elif activity_level == "c":
+                recc_calories = 2800
+                return recc_calories
+
+        elif age > 50:
+            if activity_level == "a":
+                recc_calories = 2000
+                return recc_calories
+            elif activity_level == "b":
+                recc_calories = 2200
+                return recc_calories
+            elif activity_level == "c":
+                recc_calories = 2400
+                return recc_calories
 
 
 def main():
