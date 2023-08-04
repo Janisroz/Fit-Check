@@ -1,5 +1,6 @@
 import json
 
+
 def welcome():
     """
     Welcomes user to program
@@ -58,6 +59,9 @@ def bmi(name):
 
 
 def get_height():
+    """
+    Gets user weight input and validates
+    """
     try:
         height = int(input("Enter your height e.g.180 (Do not include cm):\n"))
         if height < 300:
@@ -70,6 +74,9 @@ def get_height():
 
 
 def get_weight():
+    """
+    Gets user weight input and validates
+    """
     try:
         weight = int(input("Enter your weight e.g.80 (Do not include kg):\n"))
         if weight < 300:
@@ -131,6 +138,9 @@ def bmi_result(bmi, name):
 
 
 def recc_calories(name,recommendation):
+    """
+    Collect info to give user a recommendation on daily calorie consumption
+    """
     print("----------------------------------------------------")
     print("Next we will calculate your recommended calories")
     print("We will do this by getting your gender, age and activity level")
@@ -165,6 +175,9 @@ def recc_calories(name,recommendation):
 
 
 def get_gender():
+    """
+    Get gender of user
+    """
     try:
         print("----------------------------------------------------")
         print("Please tell us your gender\nm - male\nf - female")
@@ -183,6 +196,9 @@ def get_gender():
 
 
 def get_age():
+    """
+    Get age of user
+    """
     try:
         age = int(input("\nPlease tell us your age from 18-100:\n"))
         print("----------------------------------------------------\n")
@@ -197,6 +213,9 @@ def get_age():
 
 
 def get_activity_level():
+    """
+    Get activity level of user
+    """
     try:
         print("Choose your activity level:")
         print("a - Sedentary\nb - Moderately Active\nc - Active")
@@ -212,7 +231,11 @@ def get_activity_level():
         print(f"Invalid data: {e}, please try again\n")
         get_activity_level()
 
+
 def get_recc_calories(gender, age, activity_level):
+    """
+    Get recommended calories depending on age, gender and activity level
+    """
     if gender == "f":
         if age <= 30:
             if activity_level == "a":
@@ -282,12 +305,27 @@ def get_recc_calories(gender, age, activity_level):
                 return recc_calories
 
 
+def workout_plan(recommendation, name):
+    """
+    Get Workout plan from workouts.json
+    """
+    print("\n----------------------------------------------------")
+    print(f"{name} we will now give you a workout plan")
+    print(f"based on your recommmendation of {recommendation}")
+    print("The plan is a 3 day workout plan split into:")
+    print("Upper Body\nLower Body\nFull Body")
+    print("You can adjust the workouts as necessary to")
+    print("Best suit your needs")
+    print("----------------------------------------------------\n")
+
+
+
 def main():
     welcome()
     name = get_name()
     recommendation = bmi(name)
     recc_calories(name, recommendation)
-
+    workout_plan(recommendation, name)
 
 if __name__ == '__main__':
     main()

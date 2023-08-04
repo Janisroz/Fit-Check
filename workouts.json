@@ -1,0 +1,69 @@
+{"Reccommendation":
+[{"weight gain":[{
+    "Upper body":
+        ["Jump rope 5 min ",
+        "push-ups 3x max",
+        "pull-ups 3x max",
+        "sit-ups 3x max",
+        "dumbbell curls 3x max"],
+
+    "Lower body":
+        ["Jump rope 5 min",
+        "body-weight squats 3x15",
+        "lunges 3x10 each leg",
+        "calf raises 3x20",
+        "hip thrust 3 x10"],
+    
+    "Full ody":
+    ["Jump rope 5 min", 
+    "kettlebell swing 3x 15",
+    "burpees 3x10",
+    "plank 3 x 30sec",
+    "kettlebell get-up 3x 3 each side"]
+}]},
+{"maintenance":[{
+    "Upper body":
+        ["Jump rope 5 min",
+        "clap push-up 3x5",
+        "medicine ball throw 3x each arm",
+        "sit-ups 3x20",
+        "pull-ups 3x20"],
+
+    "Lower body":
+        ["Jump rope 5 min", 
+        "explosive squat 3x10",
+        "lunge jumps 3x10",
+        "long jumps 3x 5",
+        "hip thrust 3 x10"],
+    
+    "Full body":
+    ["Jump rope 5 min",
+    "kettlebell swing 3x 15",
+    "burpees 3x10",
+    "plank 3 x 30sec",
+    "kettlebell get-up 3x 3 each side"]
+    }]},
+
+    {"weight loss":[{
+        "Upper body":
+            ["Jump rope 5 min",
+            "knee-pushups 3x15",
+           "medicine ball slam 3 x 10",
+            "battle ropes 3x 30sec",
+            "rowing machine 3x 30 sec"],
+    
+        "Lower body":
+            ["Jump rope 5 min",
+            "sled push 3x15 m",
+            "sled pull 3x 15m",
+            "sprint 4x15m",
+            "hip thrust 3 x10"],
+        
+        "Full body":
+        ["Jump rope 5 min",
+        "kettlebell swing 3x 15",
+        "burpees 3x10",
+        "plank 3 x 30sec",
+        "kettlebell get-up 3x 3 each side"]
+        }]}
+        ]}
