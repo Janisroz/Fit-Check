@@ -219,12 +219,14 @@ def get_activity_level():
     try:
         print("Choose your activity level:")
         print("a - Sedentary\nb - Moderately Active\nc - Active")
-        activity_level = input("Next please tell us your activity level a, b or c\n")
-        if activity_level == "a" or activity_level == "b" or activity_level == "c":
+        print("Please tell us your activity level")
+        activity_level = input("a, b or c\n")
+        if activity_level == "a" or activity_level == "b" \
+                or activity_level == "c":
             return activity_level
         else:
             raise ValueError(
-                "Please choose a, b or c"
+                "Please choose a, b or c:"
             )
 
     except ValueError as e:
@@ -334,7 +336,7 @@ def weight_gain_session_print():
     with open("workouts.json", "r") as f:
         data = json.load(f)
 
-    # gets the gain weight sessions dictionary 
+    # gets the gain weight sessions dictionary
     weight_plan = data["Reccommendation"][0]
 
     # gets the gain weight sessions
@@ -366,7 +368,7 @@ def maintenance_session_print():
     with open("workouts.json", "r") as f:
         data = json.load(f)
 
-    # gets the maintenance weight sessions dictionary 
+    # gets the maintenance weight sessions dictionary
     weight_plan = data["Reccommendation"][1]
 
     # gets the maintenance weight sessions
@@ -388,7 +390,7 @@ def maintenance_session_print():
         print(i)
 
     print("----------------------------------------------------")
-    
+
 
 def weight_loss_session_print():
     """
@@ -398,11 +400,11 @@ def weight_loss_session_print():
     with open("workouts.json", "r") as f:
         data = json.load(f)
 
-    # gets the weight loss sessions dictionary 
+    # gets the weight loss sessions dictionary
     weight_plan = data["Reccommendation"][2]
 
     # gets the weight loss sessions
-    weight_sessions = weight_plan["maintenance"][0]
+    weight_sessions = weight_plan["weight loss"][0]
 
     print("----------------------------------------------------")
     print("Upper Body:")
@@ -432,5 +434,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
