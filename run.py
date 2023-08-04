@@ -1,3 +1,5 @@
+import json
+
 def welcome():
     """
     Welcomes user to program
@@ -125,10 +127,10 @@ def bmi_result(bmi, name):
     print(f"your focus is on {recommendation}")
     print("----------------------------------------------------\n")
 
-    return result
+    return recommendation
 
 
-def recc_calories(name, bmi):
+def recc_calories(name,recommendation):
     print("----------------------------------------------------")
     print("Next we will calculate your recommended calories")
     print("We will do this by getting your gender, age and activity level")
@@ -140,18 +142,27 @@ def recc_calories(name, bmi):
     # get age & validate
     age = get_age()
     # get activity level and validate
-    print("----------------------------------------------------")
-    print("\nActivity level is your total amount of daily physical activity")
+    print("\n----------------------------------------------------")
+    print("Activity level is your total amount of daily physical activity")
     print("It is split into three levels:")
     print("Sedentary is inactive where your only activity is daily life\n")
     print("Moderately active is at least 60 mins 3 days a week")
     print("of moderately intense excercise for  per week\n")
     print("Active is at least 60 mins 5 days a week")
-    print("of moderately intense to intense exercise per week\n")
-    print("----------------------------------------------------")
+    print("of moderately intense to intense exercise per week")
+    print("----------------------------------------------------\n")
     activity_level = get_activity_level()
     recc_calories = get_recc_calories(gender, age, activity_level)
-    print(recc_calories)
+
+    # Give recc calories
+    print("\n----------------------------------------------------")
+    print(f"{name} your daily recommended calories for your age")
+    print(f"and acitivity level is {recc_calories} calories")
+    print("per day")
+    print("By maintaining this amount of calories you will be")
+    print(f"on track to reaching our recommendation of {recommendation}")
+    print("----------------------------------------------------\n")
+
 
 def get_gender():
     try:
@@ -274,8 +285,8 @@ def get_recc_calories(gender, age, activity_level):
 def main():
     welcome()
     name = get_name()
-    body_mass_index_result = bmi(name)
-    recc_calories(name, body_mass_index_result)
+    recommendation = bmi(name)
+    recc_calories(name, recommendation)
 
 
 if __name__ == '__main__':
