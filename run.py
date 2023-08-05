@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 def welcome():
@@ -33,7 +34,7 @@ def validate_name(name):
                 f"Name must only be letters and less than 20 characters"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again\n")      
+        print(f"Invalid data: {e}, please try again\n")
         return False
 
     return True
@@ -84,9 +85,9 @@ def validate_height(height):
         if height < 300:
             return height
         else:
-             raise Exception
+            raise Exception
     except Exception:
-        print("Height must be numbers only and less than 300")      
+        print("Height must be numbers only and less than 300")
         return False
 
     return True
@@ -101,9 +102,9 @@ def validate_weight(weight):
         if weight < 300:
             return weight
         else:
-             raise Exception
+            raise Exception
     except Exception:
-        print("Weight must be numbers only and less than 300")      
+        print("Weight must be numbers only and less than 300")
         return False
 
     return True
@@ -168,10 +169,22 @@ def recc_calories(name, recommendation):
     print("and creating a recommendation based on this")
     print("----------------------------------------------------\n")
     # get gender & validate
-    gender = get_gender()
+    while True:
+        print("----------------------------------------------------")
+        print("Please tell us your gender\nm - male\nf - female")
+        gender = input("Input your gender:\n")
+        if validate_gender(gender):
+            break
 
     # get age & validate
-    age = get_age()
+    while True:
+        age = (input("\nPlease tell us your age from 18-100:\n"))
+        print("----------------------------------------------------\n")
+        if validate_age(age):
+            break
+
+    age = int(age)
+
     # get activity level and validate
     print("\n----------------------------------------------------")
     print("Activity level is your total amount of daily physical activity")
@@ -182,7 +195,15 @@ def recc_calories(name, recommendation):
     print("Active is at least 60 mins 5 days a week")
     print("of moderately intense to intense exercise per week")
     print("----------------------------------------------------\n")
-    activity_level = get_activity_level()
+    # activity_level = get_activity_level()
+    while True:
+        print("Choose your activity level:")
+        print("a - Sedentary\nb - Moderately Active\nc - Active")
+        print("Please tell us your activity level")
+        activity_level = input("a, b or c\n")
+        if validate_activity_level(activity_level):
+            break
+
     recc_calories = get_recc_calories(gender, age, activity_level)
 
     # Give recc calories
@@ -195,34 +216,30 @@ def recc_calories(name, recommendation):
     print("----------------------------------------------------\n")
 
 
-def get_gender():
+def validate_gender(gender):
     """
     Get gender of user
     """
     try:
-        print("----------------------------------------------------")
-        print("Please tell us your gender\nm - male\nf - female")
-
-        gender = input("Input your gender:\n")
         if gender == "m" or gender == "f":
             return gender
         else:
             raise ValueError(
                 "Please choose m for male or f for female"
             )
-
     except ValueError as e:
         print(f"Invalid data: {e}, please try again\n")
-        get_gender()
+        return False
+
+    return True
 
 
-def get_age():
+def validate_age(age):
     """
     Get age of user
     """
     try:
-        age = int(input("\nPlease tell us your age from 18-100:\n"))
-        print("----------------------------------------------------\n")
+        age = int(age)
         if age >= 18 and age <= 100:
             return age
         if age < 18 or age > 100:
@@ -230,18 +247,16 @@ def get_age():
 
     except ValueError:
         print("Age must be greater than 18 and less than 100\n")
-        get_age()
+        return False
+
+    return True
 
 
-def get_activity_level():
+def validate_activity_level(activity_level):
     """
     Get activity level of user
     """
     try:
-        print("Choose your activity level:")
-        print("a - Sedentary\nb - Moderately Active\nc - Active")
-        print("Please tell us your activity level")
-        activity_level = input("a, b or c\n")
         if activity_level == "a" or activity_level == "b" \
                 or activity_level == "c":
             return activity_level
@@ -252,7 +267,9 @@ def get_activity_level():
 
     except ValueError as e:
         print(f"Invalid data: {e}, please try again\n")
-        get_activity_level()
+        return False
+
+    return True
 
 
 def get_recc_calories(gender, age, activity_level):
@@ -445,15 +462,16 @@ def weight_loss_session_print():
     print("----------------------------------------------------")
 
 
+def restart_func()
+
+
 def main():
     welcome()
     name = get_name()
     recommendation = bmi(name)
     recc_calories(name, recommendation)
     workout_plan(recommendation, name)
-
-
-
+    restart_func()
 
 
 if __name__ == '__main__':
