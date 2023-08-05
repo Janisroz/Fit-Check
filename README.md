@@ -109,7 +109,7 @@ sys was used to exit the program at the end if the user chose to end it
 
 ## Testing
 
-For all testing carried out please refer to [TESTING.md](/workspaces/Fit-Check/TESTING.md)
+For all testing carried out please refer to [TESTING.md](TESTING.md)
 
 ## Deployment 
 
