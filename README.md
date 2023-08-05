@@ -101,5 +101,50 @@ Java Script Object Notation was used to import the workout plans from the workou
     - Was used to deploy the program
 
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
-    - Was used to validate code
+    - Was used to validate code throughout the development 
 
+## Testing
+
+For all testing carried out please refer to [Testing.md](Testing.md)
+
+## Deployment 
+
+The program was deployed using Heroku. The live link can be found [HERE!](https://fit-check-d4815a99f019.herokuapp.com/)
+
+Deployment followed these steps:
+
+- Firstly, for inputs to work correctly in the terminal of the deployed program a new line (\n) character was added to each input method.
+
+- If there was any dependencies needed to run the program on Heroku these would need to be updated in the 'requirements.txt' file using the command:
+`pip3 freeze > requirements.txt` 
+
+- All these updates must be pushed to GitHub
+
+### Deployment to Heroku
+
+To deploy to Heroku follow these steps:
+
+- Log into the Heroku website
+- On the dashboard page click 'New' and then 'Create new app'
+- Give your application a name, select the region and click 'Create app'
+- Now from the menu on top select 'settings' and 'Reveak Config Vars', in the KEY field enter 'PORT' and the VALUE enter '8000'
+- Next select 'Add buildpack' and select 'Python' and 'NodeJS' in that order.
+- Now from the menu on top select 'Deploy'
+- You can choose to 'Enable Automatic Deploys' or 'Manual Deploy'. Automatic will rebuild the program everytime there is an update pushed to GitHub. This was the selection made for this program
+- Once Deployed a link will be on top of the page that you can click saying 'Open App' this will bring you to the live site
+
+### To Clone the Repository Code Locally
+
+- Begin in the required repository
+- Click on the green code drop down button and select local
+- Copy the repository link to the clipboard
+- Using an IDE with pre-installed git type git clone copied-git-url into the IDE terminal
+- The project will now be cloned on your IDE to use
+
+## Credits
+
+- [How to use JSON in Python](https://www.youtube.com/watch?v=-51jxlQaxyA&ab_channel=TechWithTim) video was used to understand how to use the workouts.json file 
+
+- [The CDC](https://www.cdc.gov/healthyweight/assessing/index.html) website was used to get the calculationa and information about BMI 
+
+- [Web MD](https://www.webmd.com/diet/calories-chart) was used to get a chart of the required calories
