@@ -17,22 +17,22 @@ Manual testing was conducted on all the elements of the program to ensure all we
 | Step        | Description  | Expected Result  | Actual Result | Pass / Fail | 
 | ------------- |:-------------:| -----:        | ------------- |:-------------:| 
 | 1           | Deployed Website  | The welcome screen loads with no issues | Welcome Screen loads with no issues      | Pass | 
-|2            | User Input    |   User Enters name acccepting only one word less than 20 characters long and only consisting of letters | Name is accepted and succesfully validated     | Pass  |  
+|2            | User Input    |   User Enters name accepting only one word less than 20 characters long and only consisting of letters | Name is accepted and succesfully validated     | Pass  |  
 
 ### BMI Testing
 
 | Step        | Description  | Expected Result  | Actual Result | Pass / Fail | 
 | ------------- |:-------------:| -----:        | ------------- |:-------------:| 
-| 1 | User Height Input| User enters height and it is validated that is only numbers and less than 300| Height validated succesully |Pass| 
-| 2 |User Weight Input| User enters weight and it is validated that is only numbers and less than 300| Weight vallidated succcesfully |Pass| 
+| 1 | User Height Input| User enters height and it is validated that is only numbers and less than 300| Height validated successfully |Pass| 
+| 2 |User Weight Input| User enters weight and it is validated that is only numbers and less than 300| Weight validated succcessfully |Pass| 
 
 ### Recommended Calories Testing 
 
 | Step        | Description  | Expected Result  | Actual Result | Pass / Fail | 
 | ------------- |:-------------:| -----:        | ------------- |:-------------:| 
-| 1 |User Gender Input| User eneters their gender either m or f and that is validated to be only those inputs| Input validated succesfully |Pass| 
-| 2 |User Age Input| User eneters their age only numbers between 18-100 |Age validated succesfully |Pass| 
-| 3 |User Activity Level Input| User enters their activity level either a , b or c | Activity level validated succesfully |Pass| 
+| 1 |User Gender Input| User enters their gender either m or f and that is validated to be only those inputs| Input validated successfully |Pass| 
+| 2 |User Age Input| User enters their age only numbers between 18-100 |Age validated successfully |Pass| 
+| 3 |User Activity Level Input| User enters their activity level either a , b or c | Activity level validated successfully |Pass| 
 
 ### Restart Section
 
@@ -43,15 +43,15 @@ Manual testing was conducted on all the elements of the program to ensure all we
 ## User Stories Testing 
 
 I would like to find out my BMI without having to do any calculations
--  Users BMI is succesfully calculated and a recommendation is given using the users inputs
+-  Users BMI is successfully calculated and a recommendation is given using the users inputs
 
 I would like to find out my daily recommended calories without having to do any calculations
-- Users recommended calories is succesfully calculated and a recommendation is given using the users inputs
+- Users recommended calories is successfully calculated and a recommendation is given using the users inputs
 
 I would like to see errors and reasoning if there is issues with my inputs
 - If an input was given incorrectly the user was informed of the issue
 
-I would like to get a recoommended weekly workout plan that suits my needs
+I would like to get a recommended weekly workout plan that suits my needs
 - Using the users input a weekly workout plan was recommended to the user
 
 ## Resolved Bug

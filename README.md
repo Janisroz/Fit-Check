@@ -16,8 +16,8 @@ As a user,
 
 * I would like to find out my BMI without having to do any calculations
 * I would like to find out my daily recommended calories without having to do any calculations 
-* I would like to see errors and reasoning if there is issues with my inputs
-* I would like to get a recoommended weekly workout plan that suits my needs
+* I would like to see errors and reasoning if there are issues with my inputs
+* I would like to get a recommended weekly workout plan that suits my needs
 
 ### Logic Flow
 
@@ -44,7 +44,7 @@ This section asks users to input their height and weight and calculates their BM
 
 #### BMI Results Section
 
-When the user inputs their height and weight they are given a bmi result and reccomendation 
+When the user inputs their height and weight they are given a bmi result and recommendation 
 
 ![bmi results section of the program](docs/images/bmi-results.jpg)
 
@@ -109,7 +109,8 @@ sys was used to exit the program at the end if the user chose to end it
 
 ## Testing
 
-For all testing carried out please refer to [TESTING.md](TESTING.md)
+For all testing carried out please refer to [TESTING.md](
+    TESTING.md)
 
 ## Deployment 
 
@@ -131,7 +132,7 @@ To deploy to Heroku follow these steps:
 - Log into the Heroku website
 - On the dashboard page click 'New' and then 'Create new app'
 - Give your application a name, select the region and click 'Create app'
-- Now from the menu on top select 'settings' and 'Reveak Config Vars', in the KEY field enter 'PORT' and the VALUE enter '8000'
+- Now from the menu on top select 'settings' and 'Reveal Config Vars', in the KEY field enter 'PORT' and the VALUE enter '8000'
 - Next select 'Add buildpack' and select 'Python' and 'NodeJS' in that order.
 - Now from the menu on top select 'Deploy'
 - You can choose to 'Enable Automatic Deploys' or 'Manual Deploy'. Automatic will rebuild the program everytime there is an update pushed to GitHub. This was the selection made for this program
@@ -149,6 +150,6 @@ To deploy to Heroku follow these steps:
 
 - [How to use JSON in Python](https://www.youtube.com/watch?v=-51jxlQaxyA&ab_channel=TechWithTim) video was used to understand how to use the workouts.json file 
 
-- [The CDC](https://www.cdc.gov/healthyweight/assessing/index.html) website was used to get the calculationa and information about BMI 
+- [The CDC](https://www.cdc.gov/healthyweight/assessing/index.html) website was used to get the calculations and information about BMI 
 
 - [Web MD](https://www.webmd.com/diet/calories-chart) was used to get a chart of the required calories
