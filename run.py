@@ -459,10 +459,44 @@ def weight_loss_session_print():
     for i in weight_sessions["Full body"]:
         print(i)
 
+    print("----------------------------------------------------\n")
+
+
+def restart_func():
+    """
+    Allows user to restart program or exit
+    """
     print("----------------------------------------------------")
+    print("Thanks for using the program")
+    print("Would you like to restart the program?")
+    while True:
+        restart_prog = input("y = restart or n = exit\n")
+        if validate_restart_func(restart_prog):
+            break
+
+    if restart_prog == "y":
+        main()
+    elif restart_prog == "n":
+        sys.exit()
 
 
-def restart_func()
+def validate_restart_func(restart_prog):
+    """
+    Validate if user wants to restart the program
+    """
+    try:
+        if restart_prog == "y" or restart_prog == "n":
+            return restart_prog
+        else:
+            raise ValueError(
+                "Please choose y or n:"
+            )
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again\n")
+        return False
+
+    return True
 
 
 def main():
