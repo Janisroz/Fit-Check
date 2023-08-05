@@ -82,6 +82,10 @@ It would be useful to email the user a copy of the workout plan in order to allo
 
 Java Script Object Notation was used to import the workout plans from the workouts.json file 
 
+### sys:
+
+sys was used to exit the program at the end if the user chose to end it
+
 ## Technologies Used
 
 - Python 
@@ -105,7 +109,7 @@ Java Script Object Notation was used to import the workout plans from the workou
 
 ## Testing
 
-For all testing carried out please refer to [Testing.md](Testing.md)
+For all testing carried out please refer to [TESTING.md](/workspaces/Fit-Check/TESTING.md)
 
 ## Deployment 
 
