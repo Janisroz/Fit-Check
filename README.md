@@ -23,4 +23,83 @@ As a user,
 
 To plan the logic flow of the program, a diagram was generated detailing each step of the program. A key is given to distinguish the different types of steps
 
+![Logic flow of the program](docs/images/logic-chart.jpeg)
+
+## Features
+
+### Existing Features
+
+#### Welcome Screen
+
+This screen welcomes the user to the program and advises on what it will do.
+Then it asks the user to input their name
+
+![Welcome screen of the program](docs/images/welcome-screen.jpg)
+
+#### BMI Section 
+
+This section asks users to input their height and weight and calculates their BMI using these
+
+![bmi section of the program](docs/images/bmi-section.jpg)
+
+#### BMI Results Section
+
+When the user inputs their height and weight they are given a bmi result and reccomendation 
+
+![bmi results section of the program](docs/images/bmi-results.jpg)
+
+#### Recommended Calories Section
+
+This section asks the user their age, gender and activity levels and calculates their recommended daily calories
+
+![calorie calculation section of the program](docs/images/calorie-section.jpg)
+
+#### Recommended Calories Results Section
+
+This section calculates and returns the users recommended daily calories 
+
+![calorie recommendation section of the program](docs/images/calorie-recommendation-section.jpg)
+
+#### Workout Plan Introduction Section
+
+By using the users recommendation from the bmi section of the project a workout plan is generated for the user 
+
+![Workout plan introduction](docs/images/work-out-plan-intro.jpg)
+
+#### 3 Day Workout Section
+
+Using the users data a 3 day workout plan is generated for the user 
+
+![3 day Workout plan ](docs/images/workout-plan.jpg)
+
+### Features Left to Implement
+
+It would be useful to email the user a copy of the workout plan in order to allow the user to have access to the plan even when they are not running the program.
+
+## Python Libraries Used
+
+### JSON:
+
+Java Script Object Notation was used to import the workout plans from the workouts.json file 
+
+## Technologies Used
+
+- Python 
+
+    - Python was used to build the contents and structure of the program
+
+- GitHub
+    - GitHub was used to store the source code and also deploy the website on Git Pages
+
+- Git
+    - Was used to commit and push code throughout development
+
+- [LucidChart](https://www.lucidchart.com/pages/)
+    - Was used to create the flow chart to plan the logic flow of the program
+
+- [Heroku](https://www.heroku.com/)
+    - Was used to deploy the program
+
+- [CI Python Linter](https://pep8ci.herokuapp.com/)
+    - Was used to validate code
 

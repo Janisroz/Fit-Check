@@ -16,17 +16,25 @@ def get_name():
     Validates user input as only letters and less than 20 characters
     """
 
-    try:
+    while True:
         name = input("Please Enter your first name:\n")
-        if str.isalpha(name) and len(name) < 20:
+        if validate_name(name):
+            break
+
+    return name
+
+
+def validate_name(name):
+    try:
+        if name.isalpha() and len(name) < 20:
             return name
         else:
             raise ValueError(
                 f"Name must only be letters and less than 20 characters"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again\n")
-        get_name()
+        print(f"Invalid data: {e}, please try again\n")      
+        return False
 
     return True
 
@@ -44,10 +52,19 @@ def bmi(name):
     print("----------------------------------------------------\n")
 
     # get height & validate
-    height = get_height()
+    while True:
+        height = input("Enter your height e.g.180 (Do not include cm):\n")
+        if validate_height(height):
+            break
 
     # get weight & validate
-    weight = get_weight()
+    while True:
+        weight = input("Enter your weight e.g.80 (Do not include kg):\n")
+        if validate_weight(weight):
+            break
+
+    height = int(height)
+    weight = int(weight)
 
     # Calculate BMI
     bmi = calculate_bmi(height, weight)
@@ -58,34 +75,38 @@ def bmi(name):
     return result
 
 
-def get_height():
+def validate_height(height):
     """
     Gets user weight input and validates
     """
     try:
-        height = int(input("Enter your height e.g.180 (Do not include cm):\n"))
+        height = int(height)
         if height < 300:
             return height
         else:
-            raise Exception
+             raise Exception
     except Exception:
-        print("Height must be numbers only and less than 300")
-        get_height()
+        print("Height must be numbers only and less than 300")      
+        return False
+
+    return True
 
 
-def get_weight():
+def validate_weight(weight):
     """
     Gets user weight input and validates
     """
     try:
-        weight = int(input("Enter your weight e.g.80 (Do not include kg):\n"))
+        weight = int(weight)
         if weight < 300:
             return weight
         else:
-            raise Exception
+             raise Exception
     except Exception:
-        print("Weight must be numbers only and less than 300")
-        get_weight()
+        print("Weight must be numbers only and less than 300")      
+        return False
+
+    return True
 
 
 def calculate_bmi(h, w):
@@ -430,6 +451,9 @@ def main():
     recommendation = bmi(name)
     recc_calories(name, recommendation)
     workout_plan(recommendation, name)
+
+
+
 
 
 if __name__ == '__main__':
